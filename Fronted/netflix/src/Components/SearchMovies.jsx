@@ -3,12 +3,13 @@ import axios from 'axios';
 import RenderMovies from './RenderMovies';
 import './SearchMovies.css'
 import { LoginContext } from '../LoginContext';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getHistory } from '../Redux/Slices/HistorySlice';
 
 export default function SearchMovies() {
     const context = useContext(LoginContext);
     const dispatch = useDispatch();
+    const url = useSelector((state)=>state.backend.url);
 
     const [moviename,setmoviename] = useState("");
     const [mdata,setmdata] = useState(null);
@@ -25,7 +26,7 @@ export default function SearchMovies() {
                 const movie = JSON.stringify(res.data.Search[0]);
                 const email = context.user.email;
                 const data = {email:email,details:movie};
-                const msg = await axios.post("http://localhost:8000/api/history",data);
+                const msg = await axios.post(`${url}/api/history`,data);
                 dispatch(getHistory(msg.data.history));
                 
               }

@@ -9,6 +9,7 @@ export default function SearchHistory(props) {
     const context = useContext(LoginContext);
     const dispatch = useDispatch();
     const historyMovies = useSelector((state)=>state.history.historyList);
+    const url = useSelector((state)=>state.backend.url);
 
     const [movies, setMovies] = useState(context.user.movieHistory || []); // Set initial state from context
 
@@ -35,7 +36,7 @@ export default function SearchHistory(props) {
         try{
             const email  = context.user.email;
             const data = {email:email,index:key};
-            const msg =await axios.post("http://localhost:8000/api/history/delete",data);
+            const msg =await axios.post(`${url}/api/history/delete`,data);
             dispatch(getHistory(msg.data.history));
         }
         catch(e){

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import { useSelector } from 'react-redux';
 
 export default function Signup() {
     const navigate = useNavigate();
@@ -16,6 +17,7 @@ export default function Signup() {
     const context = useContext(LoginContext);
     const [showpassword,setshowpassword] = useState(false);
     const [toggletext,settoggletext] = useState(false);
+    const url = useSelector((state)=>state.backend.url);
 
     const passwordInputRef = useRef(null); // Ref for password input
     const showHideButtonRef = useRef(null);
@@ -30,7 +32,7 @@ export default function Signup() {
         const user = {name,email,password};
         
         try{
-          const signup = await axios.post('http://localhost:8000/api/signup',user);
+          const signup = await axios.post(`${url}/api/signup`,user);
           if(signup.data.success){
             toast.success(signup.data.message);
             navigate('/signin');

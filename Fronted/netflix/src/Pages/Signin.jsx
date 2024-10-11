@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import { useSelector } from 'react-redux';
 
 export default function Signin() {
     const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function Signin() {
     const context = useContext(LoginContext);
     const [showpassword,setshowpassword] = useState(false);
     const [toggletext,settoggletext] = useState(false);
+    const url = useSelector((state)=>state.backend.url);
 
     const passwordInputRef = useRef(null); // Ref for password input
     const showHideButtonRef = useRef(null);
@@ -24,7 +26,7 @@ export default function Signin() {
       e.preventDefault();
       const user = {email,password};
       try{
-        const login = await axios.post('http://localhost:8000/api/login',user,{
+        const login = await axios.post(`${url}/api/login`,user,{
           withCredentials:true
         });
        
