@@ -1,0 +1,56 @@
+.faq_div {
+    @apply mx-auto text-center relative mb-[0.2rem] w-[100%]
+}
+
+.faq_head {
+    @apply text-center font-bold lg:text-[3.5rem] text-[2.5rem] p-[1rem] pt-[3rem]
+}
+
+.faq_btn {
+    @apply relative h-[5.8rem] w-[80%] lg:text-[1.7rem] text-[1.3rem] p-[1rem] pl-[2.1rem] text-left hover:cursor-pointer  duration-[0.1s];
+    background: rgb(45, 45, 45);
+    
+}
+.faq_btn:hover{
+    background: rgba(70, 70, 70, 1)
+}
+
+.faq_msg {
+    @apply w-[100%] mt-0 relative scale-y-0 h-[0] duration-200 mb-[0.5rem];
+}
+
+.faq_para {
+    @apply px-[2rem] mx-auto lg:text-[1.5rem] text-[1.2rem] p-[1rem] w-[80%];
+    background: rgb(45, 45, 45);
+}
+
+.span1 {
+    @apply absolute text-[3.6rem] right-[13%]
+}
+
+.ready2 {
+    @apply lg:text-[1.3rem] mt-[1.5rem] lg:mt-[2rem] text-[1.2rem] md:leading-none leading-6 px-[2.3rem]
+}
+
+.get_msg {
+    @apply items-center text-white text-center mx-auto bg-[black] py-[3rem]
+}
+
+.ul2 {
+    @apply underline underline-offset-2
+}
+
+.about {
+    @apply max-w-[1500px] lg:px-[11rem] lg:py-[4rem] px-[1.9rem] text-white bg-[black]
+}
+
+.provides {
+    @apply grid lg:grid-cols-4  grid-cols-2 text-white gap-4 mt-[1.3rem]
+}
+
+@media (max-width:200px) {
+    .provides{
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,42 @@
+.b{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+}
+
+
+
+.poster {
+    @apply  lg:h-[98vh] md:h-[73vh] h-[83vh]  bg-center;
+}
+
+.p2 {
+    
+}
+
+.poster-image {
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    width: 100vw;   
+  }
+  
+
+  .video-title-overlay {
+    position: absolute; /* Positioning the title overlay */
+    top: 24%; /* Adjust the top distance from the top of the poster */
+ /* Adjust the left distance from the left side */
+    z-index: 10; /* Ensure it stays above the poster image */
+    color: white; /* Text color for the title and description */
+    width: 90%; /* Width of the overlay, adjust as needed */
+    left:-15%;
+  }
+  
+  @media (max-width:640px) {
+    .video-title-overlay {
+        position: absolute; /* Positioning the title overlay */
+        top: 22%; /* Adjust the top distance from the top of the poster */
+ 
+        left:-7%;
+      }
+  }
+
+  

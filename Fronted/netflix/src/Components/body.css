@@ -1,0 +1,70 @@
+
+.div7 {
+    @apply text-center lg:text-left max-w-[100%] bg-[black] py-[2.7rem] mt-[0.45rem] grid lg:grid-cols-2 grid-cols-1 items-center;
+    background: rgba(0, 0, 0, 1);
+}
+
+.smart_tv {
+    @apply mx-auto text-[white] lg:mr-[1rem] lg:px-[2rem] lg:px-[12%] px-[7%] lg:w-[88%] w-[100%]
+}
+
+.smarttv_msg {
+    @apply lg:text-[3.2rem] lg:text-left text-center text-[2rem] pb-[0.8rem] font-bold
+}
+
+.div8 {
+    @apply max-w-[100%] bg-[black] py-[4rem] pb-[7rem] mt-[0.45rem] grid lg:grid-cols-2 grid-cols-1 items-center;
+    background: rgba(0, 0, 0, 1);
+}
+
+.div9 {
+    @apply absolute bottom-[7%] lg:left-[20%] left-[17%] lg:w-[60%] lg:h-[6.7rem] w-[67%] h-[5.2rem] border-[1px] border-[gray] rounded-xl;
+    background: rgba(0, 0, 0);
+}
+
+.Stranger {
+    @apply absolute text-[1rem] text-white lg:left-[24%] lg:top-[23%] top-[20.5%] left-[18%]
+}
+
+.anu {
+    @apply text-center lg:text-left lg:order-2 order-1 lg:mr-[24%] mx-auto text-[white] lg:mr-[1rem] lg:px-[2rem] lg:px-[12%] px-[7%] lg:w-[88%] w-[100%]
+}
+
+.img1 {
+    @apply absolute lg:w-[17%] w-[11%] lg:left-[78%] lg:top-[16%] top-[20%] left-[85%]
+}
+
+
+.div11_msg {
+    @apply lg:text-[3.3rem] lg:text-left lg:w-[80%] text-center text-[2rem] pb-[0.8rem] font-bold
+}
+
+.div12 {
+    @apply text-center lg:text-left max-w-[100%] bg-[black] py-[2.7rem] mt-[0.45rem] grid lg:grid-cols-2 grid-cols-1 items-center;
+    background: rgba(0, 0, 0, 1);
+}
+
+.div12_1 {
+    @apply mx-auto text-[white] lg:mr-[1rem] lg:px-[2rem] lg:px-[12%] px-[7%] lg:w-[88%] w-[100%]
+}
+
+.div12_msg {
+    @apply lg:text-[3.2rem] lg:text-left text-center text-[2rem] pb-[0.8rem] font-bold
+}
+
+.video1 {
+    @apply absolute z-[1] lg:w-[47%] w-[55%] lg:top-[12%] lg:left-[19%] left-[22%] top-[11%]
+}
+
+.div13 {
+    @apply max-w-[100%] bg-[black] py-[2.7rem] mt-[0.45rem] grid lg:grid-cols-2 grid-cols-1 items-center;
+    background: rgba(0, 0, 0, 1);
+}
+
+.div13_2 {
+    @apply text-center lg:text-left lg:order-2 order-1 lg:mr-[24%] mx-auto text-[white] lg:mr-[1rem] lg:px-[2rem] lg:px-[12%] px-[7%] lg:w-[88%] w-[100%]
+}
+
+.div13_msg {
+    @apply  lg:text-[3.3rem] lg:text-left lg:w-[96%] text-center text-[2rem] pb-[0.8rem] font-bold
+}

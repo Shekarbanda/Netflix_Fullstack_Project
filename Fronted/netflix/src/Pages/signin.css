@@ -1,0 +1,63 @@
+
+
+.body {
+    @apply font-sans;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.pass:focus{
+    border: 1px solid white;
+    outline: 1px solid white;
+}
+
+
+.bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+}
+
+.back1 {
+    @apply max-w-[100%] lg:h-[100vh] bg-[url("C:\Users\banda\Documents\WebDevelopment\Netflix_Project\Images\bg.jpg")] bg-center;
+}
+
+.bg1 {
+    @apply w-[100%] h-[100vh];
+}
+
+.content {
+    @apply max-w-[1400px] grid md:grid-cols-[30%_auto] grid-cols-[40%_auto] mx-auto pt-[1.2rem]
+}
+
+.divvv4 {
+    @apply flex justify-end 
+}
+
+.divvv5 {
+    @apply mr-[1rem] sm:w-[7.8rem] w-[4rem] h-[2.1rem] px-[0.5rem] font-bold bg-[red] text-white rounded-[4px]
+
+}
+
+.divvv5a{
+    @apply mr-[1rem] sm:w-[7.8rem] w-[4rem] h-[2.1rem] px-[0.5rem] font-bold bg-[transparent] border-[1px] text-white border-[white] rounded-[4px]
+
+}
+
+#user_name{
+    
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: scroll;
+    scrollbar-color: red;
+
+}
+
+#user_name::-webkit-scrollbar{
+    display: none;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+.search{
+    @apply mr-[1rem] h-[2.1rem] px-[0.5rem] font-bold bg-[red] text-white rounded-[4px]
+}

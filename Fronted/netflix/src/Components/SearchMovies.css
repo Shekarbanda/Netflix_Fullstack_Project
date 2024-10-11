@@ -1,0 +1,23 @@
+/* ArcSpinner.css */
+.arc-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .arc-spinner .arc {
+    width: 80px;
+    height: 80px;
+    border: 7px solid transparent; /* Light red background for arc */
+    border-left-color: #e50914; /* Netflix red for the arc */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
