@@ -16,7 +16,7 @@
 }
 
 .back1 {
-    @apply max-w-[100%] lg:h-[100vh] bg-[url("C:\Users\banda\Documents\WebDevelopment\Netflix_Project\Images\bg.jpg")] bg-center;
+    @apply max-w-[100%] lg:h-[100vh] bg-[url('../Images/bg.jpg')] bg-center;
 }
 
 .bg1 {
