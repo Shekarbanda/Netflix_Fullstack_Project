@@ -16,6 +16,7 @@ dotenv.config({
 const secretcode = process.env.SECRET_CODE;
 
 async function is_login(req,res){
+    try{
     const token = await req.cookies.token;
     if(token){
         jwt.verify(token,secretcode,async (err,decoded)=>{
@@ -50,6 +51,15 @@ async function is_login(req,res){
             success:false
         })
     }
+    }
+    catch (err) {
+        // Catch any server-side errors
+        return res.status(500).json({
+            message: "Server error",
+            success: false,
+            error: err.message
+        });
+    }
 
 }
 
@@ -61,6 +71,8 @@ async function signup_controller(req,res){
             success:false
         })
     }
+
+    try{
     const user_email = await user.findOne({email});
     const user_name = await user.findOne({name});
 
@@ -97,6 +109,15 @@ async function signup_controller(req,res){
         message:"Account Created Successfully",
         success:true
     })
+    }
+    catch (err) {
+        // Catch any server-side errors
+        return res.status(500).json({
+            message: "Server error",
+            success: false,
+            error: err.message
+        });
+    }
 }
 
 async function login_controller(req,res){
@@ -107,6 +128,7 @@ async function login_controller(req,res){
             success:false
         })
     }
+    try{
     const user_data = await user.findOne({email});
 
     if(user_data){
@@ -131,6 +153,14 @@ async function login_controller(req,res){
         res.status(200).json({
             message:"Email or Password is wrong",
             success:false
+        });
+    }
+    }
+    catch (err) {
+        return res.status(500).json({
+            message: "Server error",
+            success: false,
+            error: err.message
         });
     }
 
