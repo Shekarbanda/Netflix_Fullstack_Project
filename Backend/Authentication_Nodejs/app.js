@@ -9,7 +9,7 @@ const { is_login } = require('./Controllers/auth.js');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: "https://netflix-1cu3.onrender.com",
     credentials:true
 }
 app.use(cors(corsOptions))

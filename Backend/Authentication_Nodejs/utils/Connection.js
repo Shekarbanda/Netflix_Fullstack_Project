@@ -14,4 +14,8 @@ function dbConnection(){
 
 
 
+<<<<<<< HEAD
 module.exports = dbConnection;
+=======
+module.exports = dbConnection;
+>>>>>>> f768f7d106fdd2c833fc3a93812541c5c8b2497c
