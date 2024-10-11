@@ -23,6 +23,7 @@ export default function HomeNavbar() {
     const isTV = useSelector((state)=>state.tv.check);
     const [history,sethistory] = useState(false);
     const nav =useNavigate();
+    const url = useSelector((state)=>state.backend.url);
   
     useEffect(()=>{
         const movie =  JSON.parse(process.env.REACT_APP_POPULAR);
@@ -58,7 +59,7 @@ export default function HomeNavbar() {
     
     async function is_login() {
         try {
-            const is_user = await axios.get('http://localhost:8000', {
+            const is_user = await axios.get(url, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -77,7 +78,7 @@ export default function HomeNavbar() {
 
     async function logouthandler() {
         try {
-            const logout = await axios.get('http://localhost:8000/api/logout');
+            const logout = await axios.get(`${url}/api/logout`);
             
             if (logout.data.success) {
                 toast.success(logout.data.message);
@@ -147,3 +148,4 @@ export default function HomeNavbar() {
         </div>
     );
 }
+
