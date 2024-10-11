@@ -18,6 +18,8 @@ dotenv.config({
     path:'.env'
 })
 
+const port = process.env.PORT || 4000;
+
 app.set('view engine','ejs');
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
@@ -52,6 +54,6 @@ app.delete('/api/movies/:id', async (req, res) => {
 
 
 
-app.listen(process.env.PORT,(err)=>{
+app.listen(port,(err)=>{
     console.log("server started");
 })
