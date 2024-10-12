@@ -16,7 +16,6 @@ dotenv.config({
 const secretcode = process.env.SECRET_CODE;
 
 async function is_login(req,res){
-    try{
     const token = await req.cookies.token;
     if(token){
         jwt.verify(token,secretcode,async (err,decoded)=>{
@@ -50,15 +49,6 @@ async function is_login(req,res){
             message:"User Not Logged in",
             success:false
         })
-    }
-    }
-    catch (err) {
-        // Catch any server-side errors
-        return res.status(500).json({
-            message: "Server error",
-            success: false,
-            error: err.message
-        });
     }
 
 }
