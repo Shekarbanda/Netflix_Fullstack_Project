@@ -30,7 +30,7 @@ export default function Streaming() {
     
     async function is_login() {
         try {
-            const is_user = await axios.get('http://localhost:8000', {
+            const is_user = await axios.get(url, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
