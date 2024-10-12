@@ -36,6 +36,7 @@ export default function SearchHistory(props) {
 
     const btnDelete=async(key)=>{
         try{
+            setdeleteloading(true);
             const email  = context.user.email;
             const data = {email:email,index:key};
             const msg =await axios.post(`${url}/api/history/delete`,data);
