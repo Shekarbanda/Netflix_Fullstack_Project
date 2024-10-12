@@ -35,11 +35,25 @@ app.use("/api",router);
 
 
 app.get('/api/logout',(req,res)=>{
-    res.cookie('token',"");
-    res.status(200).json({
-        message:"Logout Successfull",
-        success:true
-    })
+     try {
+        res.cookie('token', '', {
+            httpOnly: true,
+            secure: true, 
+            sameSite: 'None',
+            expires: new Date(0),
+        });
+        
+        res.status(200).json({
+            message: 'Logged out successfully',
+            success: true,
+        });
+    } catch (err) {
+        res.status(500).json({
+            message: 'Logout failed',
+            success: false,
+            error: err.message,
+        });
+    }
 })
 
 app.delete('/api/movies/:id', async (req, res) => {
