@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Signin() {
     const navigate = useNavigate();
@@ -17,6 +17,7 @@ export default function Signin() {
     const [showpassword,setshowpassword] = useState(false);
     const [toggletext,settoggletext] = useState(false);
     const url = useSelector((state)=>state.backend.url);
+    const dispatch = useDispatch();
 
     const passwordInputRef = useRef(null); // Ref for password input
     const showHideButtonRef = useRef(null);
@@ -32,6 +33,7 @@ export default function Signin() {
        
         if(login.data.success){
             const user = login.data.user;
+             dispatch(getHistory(login.data.history));
             toast.success(`${login.data.message} ${user.name}`);
             navigate('/home');
         }
