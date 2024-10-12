@@ -9,6 +9,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import Footer from '../Components/Footer';
 import getSimilarMovies from '../API/getSimilarMovies';
 import RenderMovies from '../Components/RenderMovies';
+import { getHistory } from '../Redux/Slices/HistorySlice';
 
 
 export default function Streaming() {
