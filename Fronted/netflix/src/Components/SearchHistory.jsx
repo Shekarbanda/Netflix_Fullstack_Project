@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHistory } from '../Redux/Slices/HistorySlice';
 import toast from 'react-hot-toast';
+import { MdDelete } from "react-icons/md";
 
 export default function SearchHistory(props) {
     const context = useContext(LoginContext);
