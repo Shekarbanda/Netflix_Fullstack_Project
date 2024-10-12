@@ -12,6 +12,7 @@ export default function SearchHistory(props) {
     const historyMovies = useSelector((state)=>state.history.historyList);
     const url = useSelector((state)=>state.backend.url);
     const [deleteloading,setdeleteloading] = useState(false);
+    const [clickedkey,setclickedkey] = useState(null);
 
     const [movies, setMovies] = useState(context.user.movieHistory || []); // Set initial state from context
 
@@ -35,6 +36,7 @@ export default function SearchHistory(props) {
     };
 
     const btnDelete=async(key)=>{
+        setclickedkey(key);
         try{
             setdeleteloading(true);
             const email  = context.user.email;
@@ -97,7 +99,7 @@ export default function SearchHistory(props) {
                                         
                                     </div>
                                     </div>
-                                    <button className='search' onClick={()=>{btnDelete(key);}}>{deleteloading?"deleting...":"delete"}</button>
+                                    <button className='search' onClick={()=>{btnDelete(key);}}>{deleteloading&&(key==clickedkey)?"Deleting...":<MdDelete></MdDelete>}</button>
                                 </div>
                             );
                         })
