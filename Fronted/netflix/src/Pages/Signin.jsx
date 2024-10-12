@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
 import { useDispatch, useSelector } from 'react-redux';
+import { getHistory } from '../Redux/Slices/HistorySlice';
 
 export default function Signin() {
     const navigate = useNavigate();
