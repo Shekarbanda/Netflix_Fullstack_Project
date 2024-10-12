@@ -14,6 +14,7 @@ import RenderMovies from '../Components/RenderMovies';
 export default function Streaming() {
     const [similarmovies,setsimilarmovies] = useState(null);
     const [details,setdetails] = useState(null);
+    const url = useSelector((state)=>state.backend.url);
     const video = useSelector((state)=>state.playing.details);
     useEffect(() => {
         is_login();
