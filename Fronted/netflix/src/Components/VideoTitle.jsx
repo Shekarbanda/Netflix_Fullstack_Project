@@ -27,7 +27,7 @@ export default function VideoTitle() {
             <h1 className="mt-4 pb-1 sm:w-[100%] text-[20px] font-extrabold sm:text-5xl md:text-6xl">
                 {details?.title? details?.title : details?.name}
             </h1>
-            <p className="mt-4 text-[10px] sm:text-lg md:text-xl">
+            <p className="mt-4 text-[10px] sm:text-[15px] lg:text-xl">
                 {details ? details?.overview : "Details not found"}
             </p>
             <div className="flex flex-col md:flex-row mt-8 space-y-2 md:space-y-0 md:space-x-4">
