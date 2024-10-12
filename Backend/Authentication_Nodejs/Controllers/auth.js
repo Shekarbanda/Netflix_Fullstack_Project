@@ -125,7 +125,13 @@ async function login_controller(req,res){
         const is_user = await bcrypt.compare(password,user_data.password);
         if(is_user){
             const token = jwt.sign({email:email},secretcode);
-            res.cookie('token',token);
+        
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: true, // Ensure this is true in production (for HTTPS)
+                sameSite: 'None', // Cross-origin cookies
+            });
+
             res.status(200).json({
                 message:"Welcome ",
                 user:user_data,
