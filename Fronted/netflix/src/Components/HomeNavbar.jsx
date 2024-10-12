@@ -15,6 +15,7 @@ import TVBanner from './TVBanner';
 import { useSelector } from 'react-redux';
 import { getvideoid } from '../Redux/Slices/ApiSlice';
 import SearchHistory from './SearchHistory';
+import { getHistory } from '../Redux/Slices/HistorySlice';
 
 export default function HomeNavbar() {
     const [search, setsearch] = useState(false);
