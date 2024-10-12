@@ -4,12 +4,14 @@ import { LoginContext } from '../LoginContext';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHistory } from '../Redux/Slices/HistorySlice';
+import toast from 'react-hot-toast';
 
 export default function SearchHistory(props) {
     const context = useContext(LoginContext);
     const dispatch = useDispatch();
     const historyMovies = useSelector((state)=>state.history.historyList);
     const url = useSelector((state)=>state.backend.url);
+    const [deleteloading,setdeleteloading] = useState(false);
 
     const [movies, setMovies] = useState(context.user.movieHistory || []); // Set initial state from context
 
@@ -40,7 +42,11 @@ export default function SearchHistory(props) {
             dispatch(getHistory(msg.data.history));
         }
         catch(e){
-            console.log(e);
+             toast.error("Not Found");
+        }
+        finally{
+            setdeleteloading(false);
+            toast.success("Successfully Deleted")
         }
         
     }
@@ -90,7 +96,7 @@ export default function SearchHistory(props) {
                                         
                                     </div>
                                     </div>
-                                    <button className='search' onClick={()=>{btnDelete(key);}}>Delete</button>
+                                    <button className='search' onClick={()=>{btnDelete(key);}}>{deleteloading?"deleting...":"delete"}</button>
                                 </div>
                             );
                         })
