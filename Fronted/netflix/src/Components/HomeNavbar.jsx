@@ -69,7 +69,7 @@ export default function HomeNavbar() {
             if (!is_user.data.success) {
                 navigate('/signin');
             } else {
-                dispatch(getHistory(is_user.data.history));
+                dispatch(getHistory(is_user?.data?.user?.movieHistory));
                 context.setuser(is_user.data.user);
             }
         } catch (err) {
