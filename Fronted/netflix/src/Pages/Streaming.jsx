@@ -5,7 +5,7 @@ import { useContext,useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { LoginContext } from '../LoginContext';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import Footer from '../Components/Footer';
 import getSimilarMovies from '../API/getSimilarMovies';
 import RenderMovies from '../Components/RenderMovies';
@@ -16,6 +16,7 @@ export default function Streaming() {
     const [details,setdetails] = useState(null);
     const url = useSelector((state)=>state.backend.url);
     const video = useSelector((state)=>state.playing.details);
+    const dispatch = useDispatch();
     useEffect(() => {
         is_login();
        
@@ -39,6 +40,7 @@ export default function Streaming() {
             if (!is_user.data.success) {
                 navigate('/signin');
             } else {
+                dispatch(getHistory(is_user.data.history));
                 context.setuser(is_user.data.user);
             }
         } catch (err) {
