@@ -121,7 +121,7 @@ export default function Streaming() {
         <div className='mt-3 p-3' > 
         <h3 className='text-[white] px-[10px] mt-3 sm:text-[1.5rem] text-[0.8rem]'><b>Similar Movies/Shows</b></h3>
         {
-            similarmovies? <RenderMovies movies={similarmovies}></RenderMovies>:<h3 className='text-[white] px-[10px] h-[10rem] sm:h-[15rem] text-center mt-3 border-[1px] border-[white] sm:text-[2.5rem] text-[1rem]'><b>Not Found</b></h3>
+            similarmovies? <RenderMovies movies={similarmovies}></RenderMovies>:<h3 className='text-[white] px-[10px] h-[10rem] sm:h-[15rem] text-center mt-3 border-[1px] border-[white] sm:text-[2.5rem] text-[1rem]'><b>No Movies/Shows Found</b></h3>
         }
            
         </div>
