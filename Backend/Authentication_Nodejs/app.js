@@ -40,6 +40,7 @@ app.get('/api/logout',(req,res)=>{
             httpOnly: true,
             secure: true, 
             sameSite: 'None',
+             expires: new Date(0)
         });
         
         res.status(200).json({
