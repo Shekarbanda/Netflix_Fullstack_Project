@@ -34,7 +34,7 @@ export default function Signin() {
        
         if(login.data.success){
             const user = login.data.user;
-             dispatch(getHistory(login.data.history));
+             dispatch(getHistory(login?.data?.user?.movieHistory));
             toast.success(`${login.data.message} ${user.name}`);
             navigate('/home');
         }
