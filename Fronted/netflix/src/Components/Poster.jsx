@@ -31,16 +31,15 @@ export default function Poster() {
             )
           }
       <div 
-        className='poster-image' 
+        className='poster-image sm:h-[100vh] h-[60vh]' 
         style={{ 
           backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(${imageUrl})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          height: '100vh',  // Ensure the div takes up full height
-          width: '100%',    // Ensure full width
+          width: '100%', 
         }}
       />
-      <div className='video-title-overlay '>
+      <div className='video-title-overlay'>
       <VideoTitle></VideoTitle>
       </div>
       
