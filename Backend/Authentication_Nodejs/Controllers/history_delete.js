@@ -14,8 +14,15 @@ const history_delete = async(req,res)=>{
                success:false
             });
         }
-    
-        // Delete history of index index
+
+        if (!movieHistory || movieHistory.length === 0) {
+            return res.status(200).json({
+                message: "No movie history available",
+                success: true,
+                history: []
+            });
+        }
+        
         user1.movieHistory.splice(index,1);
         await user1.save();
 
