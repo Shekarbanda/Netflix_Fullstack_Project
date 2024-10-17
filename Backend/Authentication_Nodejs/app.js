@@ -38,8 +38,6 @@ app.get('/api/logout',(req,res)=>{
      try {
         res.cookie('token', '', {
             httpOnly: true,
-            secure: true, 
-            sameSite: 'None',
              expires: new Date(0)
         });
         
