@@ -52,6 +52,7 @@ export default function HomeNavbar() {
     }
 
     useEffect(() => {
+        is_login();
         const token = getCookie('token');
           if (token) {
             console.log('Token exists:', token);
@@ -72,7 +73,15 @@ export default function HomeNavbar() {
                 withCredentials: true
             });
             if (!is_user.data.success) {
-                navigate('/signin');
+                const token = getCookie('token');
+                  if (token) {
+                    console.log('Token exists:', token);
+                  } 
+                  else {
+                    console.log('No token found');
+                      navigate('/signin');
+                  }
+                
             } else {
                 dispatch(getHistory(is_user?.data?.user?.movieHistory));
                 context.setuser(is_user.data.user);
