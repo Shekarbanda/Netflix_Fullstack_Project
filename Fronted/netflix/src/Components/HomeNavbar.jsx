@@ -52,7 +52,12 @@ export default function HomeNavbar() {
     }
 
     useEffect(() => {
-        is_login();
+        const token = getCookie('token');
+          if (token) {
+            console.log('Token exists:', token);
+          } else {
+            console.log('No token found');
+          }
     }, []);
     
     const navigate = useNavigate();
@@ -78,6 +83,13 @@ export default function HomeNavbar() {
         }
     }
 
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+      }
+    
    async function logouthandler() {
     try {
         const logout = await axios.get(`${url}/api/logout`, { withCredentials: true }); 
