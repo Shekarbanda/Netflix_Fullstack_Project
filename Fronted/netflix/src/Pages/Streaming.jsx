@@ -65,13 +65,11 @@ export default function Streaming() {
 
     const moviename = video?.title?video.title:(video?.Title?video.Title:video.name);
     const m = moviename.split(" ")[0];
-    console.log(m);
 
         useEffect(() => {
             async function fetching() {
                 const list = await getSimilarMovies(m);
                 setsimilarmovies(list);
-                console.log(similarmovies)
             }
     
         
