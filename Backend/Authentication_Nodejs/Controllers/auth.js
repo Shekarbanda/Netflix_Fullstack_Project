@@ -126,9 +126,7 @@ async function login_controller(req,res){
         if(is_user){
             const token = jwt.sign({email:email},secretcode);
         
-            res.cookie('token', token, {
-                httpOnly: true,
-            });
+            res.cookie('token', token);
 
             res.status(200).json({
                 message:"Welcome ",
