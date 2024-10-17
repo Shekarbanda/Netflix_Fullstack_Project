@@ -92,7 +92,7 @@ export default function Signup() {
                 {
                   toggletext && <span ref={showHideButtonRef} onClick={()=>setshowpassword(!showpassword)} tabIndex={-1} className='absolute text-[white] sm:top-[61%] top-[60%] right-[5%]'>{showpassword?<IoEyeOff></IoEyeOff>:<IoEye></IoEye>}</span>
                 }
-                <button className='w-[100%] font-bold bg-[red] mx-[auto] my-[0.8rem] text-white border-[black] border-[1px] rounded-md p-[8px] bg-[rgba(210,3,3,7] hover:opacity-80 ' type='submit'>{context.loading?"Loading...":"Sign Up"}</button>
+                <button className='w-[100%] font-bold bg-[red] mx-[auto] my-[0.8rem] text-white border-[black] border-[1px] rounded-md p-[8px] bg-[rgba(210,3,3,7] hover:opacity-80 ' type='submit'>{context.loading?"Loading...it may take upto 2min":"Sign Up"}</button>
             </form>
             <p className='text-white'>Already have an account?<span onClick={()=>navigate('/signin')} className='text-[#5bb1c8] cursor-[pointer] hover:opacity-80 ml-1'>Sign in</span></p>
         </div>
