@@ -128,8 +128,6 @@ async function login_controller(req,res){
         
             res.cookie('token', token, {
                 httpOnly: true,
-                secure: true, // Ensure this is true in production (for HTTPS)
-                sameSite: 'None', // Cross-origin cookies
             });
 
             res.status(200).json({
@@ -163,7 +161,7 @@ async function login_controller(req,res){
 }
 
 async function history_controller(req,res) {
-    const { email, details } = req.body; // Expecting the history object from the frontend
+    const { email, details } = req.body; 
 
     try {
         const user1 = await user.findOne({ email });
@@ -174,7 +172,7 @@ async function history_controller(req,res) {
             });
         }
     
-        // Add the new history object
+    
         user1.movieHistory.push(details);
         await user1.save();
 
