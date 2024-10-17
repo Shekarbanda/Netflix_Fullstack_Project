@@ -37,7 +37,6 @@ app.use("/api",router);
 app.get('/api/logout',(req,res)=>{
      try {
         res.cookie('token', '', {
-            httpOnly: true,
              expires: new Date(0)
         });
         
