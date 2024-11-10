@@ -4,6 +4,7 @@ import playingslice from './Slices/VideoSlice';
 import checkSlice from './Slices/CheckTVSlice';
 import historyslice from './Slices/HistorySlice'
 import backendslice from './Slices/BackendLink';
+import lanslice from './Slices/LanguageSlice';
 
 export const store = configureStore({
     reducer:{
@@ -11,6 +12,7 @@ export const store = configureStore({
         playing:playingslice,
         tv:checkSlice,
         history:historyslice,
-        backend:backendslice
+        backend:backendslice,
+        Language:lanslice
     }
 })
