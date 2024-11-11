@@ -167,7 +167,7 @@ export default function Signin() {
                   {lan ? "Sign up now" : "अभी साइन अप करें"}
                 </span>
               </p>
-              <p className='text-white mt-[6px]'>{lan ? "Not ready to sign in?" : "साइन इन के लिए तैयार नहीं हैं?"} <span onClick={(e)=>{setgest(true);loginhandler(e);}} className='text-[#5bb1c8] cursor-[pointer] hover:opacity-80 ml-1'>{lan ? "Continue as Guest" : "गेस्ट के रूप में जारी रखें"}</span></p>
+              <p className='text-white mt-[6px]'>{lan ? "Not ready to sign in?" : "साइन इन के लिए तैयार नहीं हैं?"} <span onClick={()=>{setgest(true);loginhandler();}} className='text-[#5bb1c8] cursor-[pointer] hover:opacity-80 ml-1'>{lan ? "Continue as Guest" : "गेस्ट के रूप में जारी रखें"}</span></p>
 
             </div>
 
