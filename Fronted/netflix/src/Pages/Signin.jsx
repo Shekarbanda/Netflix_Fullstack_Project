@@ -31,7 +31,6 @@ export default function Signin() {
     if(context.email=="guest123@gmail.com"){
       setgest(true);
       context.setemail("");
-      setgest(false);
       loginhandler();
       
     }
