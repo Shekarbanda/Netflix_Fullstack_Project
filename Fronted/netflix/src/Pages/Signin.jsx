@@ -15,7 +15,6 @@ export default function Signin() {
   const navigate = useNavigate();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const [guest,setgest] = useState(false);
   const context = useContext(LoginContext);
   const [showpassword, setshowpassword] = useState(false);
   const [toggletext, settoggletext] = useState(false);
@@ -29,9 +28,9 @@ export default function Signin() {
 
   useEffect(()=>{
     if(context.email=="guest123@gmail.com"){
-      setgest(true);
+
       context.setemail("");
-      loginhandler();
+      loginhandler(false);
       
     }
   })
@@ -40,23 +39,27 @@ export default function Signin() {
     dispatch(getlan(e));
   }
 
+  const guesthandler=()=>{
+    loginhandler(false);
+  }
+
   async function loginhandler(e) {
     context.setloading(true);
-    e?.preventDefault();
-    
+    if(e!==false){
+      e?.preventDefault();
+    }
     let user;
-    if(guest){
-      setgest(false);
+    if(!e){
+      
       const mail = "guest123@gmail";
       const pass = "guest@123";
       setemail("guest123@gmail");
-      setpassword("guest@123")
+      setpassword("guest@123");
       user = { email:mail, password:pass };
     }
     else{
     user = { email, password };
     }
-
     try {
       const login = await axios.post(`${url}/api/login`, user, {
         withCredentials: true
@@ -120,7 +123,7 @@ export default function Signin() {
               {lan ? "Sign In" : "साइन इन"}
             </h1>
             <div className='flex-col p-[1rem]'>
-              <form onSubmit={loginhandler} className='max-w-[20rem] flex-col-1 relative'>
+              <form onSubmit={loginhandler} className='max-w-[23rem] flex-col-1 relative'>
                 <input
                   className='w-[100%] bg-[rgba(85,98,123,0.3)] mx-[auto] my-[0.8rem] text-white border-[black] border-[1px] rounded-md p-[10px] sm:text-[1.2rem]'
                   type='email'
@@ -155,7 +158,7 @@ export default function Signin() {
                   className='w-[100%] font-bold bg-[red] mx-[auto] my-[0.8rem] text-white border-[black] border-[1px] rounded-md p-[8px] bg-[rgba(210,3,3,7] hover:opacity-80'
                   type='submit'
                 >
-                  {context.loading ? (lan ? "Loading... it may take upto 2min" : "लोड हो रहा है... इसमें 2 मिनट तक का समय लग सकता है") : (lan ? "Sign In" : "साइन इन")}
+                  {context.loading ? (lan ? "Loading... it may take upto 1min" : "लोड हो रहा है... इसमें 2 मिनट तक का समय लग सकता है") : (lan ? "Sign In" : "साइन इन")}
                 </button>
               </form>
               <p className='text-white'>
@@ -167,7 +170,7 @@ export default function Signin() {
                   {lan ? "Sign up now" : "अभी साइन अप करें"}
                 </span>
               </p>
-              <p className='text-white mt-[6px]'>{lan ? "Not ready to sign in?" : "साइन इन के लिए तैयार नहीं हैं?"} <span onClick={()=>{setgest(true);loginhandler();}} className='text-[#5bb1c8] cursor-[pointer] hover:opacity-80 ml-1'>{lan ? "Continue as Guest" : "गेस्ट के रूप में जारी रखें"}</span></p>
+              <p className='text-white mt-[6px]'>{lan ? "Not ready to sign in?" : "साइन इन के लिए तैयार नहीं हैं?"} <span onClick={guesthandler} className='text-[#5bb1c8] cursor-[pointer] hover:opacity-80 ml-1'>{lan ? "Continue as Guest" : "गेस्ट के रूप में जारी रखें"}</span></p>
 
             </div>
 
