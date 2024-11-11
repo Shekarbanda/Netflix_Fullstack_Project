@@ -31,8 +31,9 @@ export default function Signin() {
     if(context.email=="guest123@gmail.com"){
       setgest(true);
       context.setemail("");
-      loginhandler();
       setgest(false);
+      loginhandler();
+      
     }
   })
 
@@ -46,6 +47,7 @@ export default function Signin() {
     
     let user;
     if(guest){
+      setgest(false);
       const mail = "guest123@gmail";
       const pass = "guest@123";
       setemail("guest123@gmail");
