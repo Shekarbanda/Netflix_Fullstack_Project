@@ -96,7 +96,7 @@ export default function Signup() {
               {lan ? "Sign Up" : "साइन अप"}
             </h1>
             <div className='flex-col p-[1rem]'>
-              <form onSubmit={signuphandler} className='relative max-w-[20rem] flex-col-1'>
+              <form onSubmit={signuphandler} className='relative max-w-[23rem] flex-col-1'>
                 <input
                   className='w-[100%] bg-[rgba(85,98,123,0.3)] mx-[auto] my-[0.8rem] text-white border-[black] border-[1px] rounded-md p-[10px] sm:text-[1.2rem]'
                   type='text'
@@ -136,7 +136,7 @@ export default function Signup() {
                   className='w-[100%] font-bold bg-[red] mx-[auto] my-[0.8rem] text-white border-[black] border-[1px] rounded-md p-[8px] bg-[rgba(210,3,3,7] hover:opacity-80 '
                   type='submit'
                 >
-                  {context.loading ? (lan ? "Loading..." : "लोड हो रहा है...") : (lan ? "Sign Up" : "साइन अप")}
+                  {context.loading ? (lan ? "Loading... it may take upto 1min" : "लोड हो रहा है...") : (lan ? "Sign Up" : "साइन अप")}
                 </button>
               </form>
               <p className='text-white'>
@@ -165,3 +165,4 @@ export default function Signup() {
 
   )
 }
+
